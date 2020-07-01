@@ -1,0 +1,42 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Boutique {% endblock %}
+
+{% block body %}
+    <h1 center >Boutiques</h1>
+
+ <!-- Portfolio Grid -->
+    <div class="container">
+      <div class="row">
+        
+      </div>
+      <!-- si admin faire ajout boutique -->
+    <a href="{{ path('boutique_new') }}">Create new</a>
+
+      <div class="row">
+      {% for boutique in boutiques %}
+            <tr>
+                <td>{{ boutique.id }}</td>
+                <td>{{ boutique.nomBou }}</td>
+                <td>{{ boutique.ville }}</td>
+                 <td><img src="{{ asset('uploads/images/' ~ boutique.image)}}"></td>
+
+                <td>
+                   <a href="{{ path('boutique_show', {'id': boutique.id}) }}" class="text-muted">show</a>
+                  <!-- si admin faire edit boutique -->
+
+            <a href="{{ path('boutique_edit', {'id': boutique.id}) }}" class="text-muted">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+                
+{% endfor %}
+            </div>
+        </div>
+         
+S
+  </section>
+{% endblock %}

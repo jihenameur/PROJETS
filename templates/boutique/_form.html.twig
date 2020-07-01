@@ -1,0 +1,11 @@
+{{ form_start(form) }}
+  
+        {{ form_widget(form.nomBou, { 'attr': { 'class': 'form-control' } ,}) }}<br>
+
+             {{ form_widget(form.ville, { 'attr': { 'class': 'form-control' } ,}) }}<br>
+             
+                  {{ form_widget(form.image, { 'attr': { 'class': 'form-control' } ,}) }}<br>
+
+
+ <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

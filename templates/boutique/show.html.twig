@@ -1,0 +1,35 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Boutique{% endblock %}
+
+{% block body %}
+    <h1>Boutique</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ boutique.id }}</td>
+            </tr>
+            <tr>
+                <th>NomBou</th>
+                <td>{{ boutique.nomBou }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ boutique.ville }}</td>
+            </tr>
+               <tr>
+                <th>Image</th>
+                <td><img src="{{ asset('uploads/images/' ~ boutique.image)}}"></td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+    <a href="{{ path('boutique_index') }}">back to list</a>
+
+    <a href="{{ path('boutique_edit', {'id': boutique.id}) }}">edit</a>
+
+    {{ include('boutique/_delete_form.html.twig') }}
+{% endblock %}
